@@ -104,6 +104,7 @@ Markdown-редактором(с добавлением MathJax и mermaid), И�
 
 ```bash
 git clone https://github.com/MitiKagura/KAGURA_KONSPEKT.git
+cd KAGURA_KONSPEKT
 ```
 Пока есть только 2 версии установщика: для **Arch-based систем** и для **Ubuntu**. В будущем создам версию для Windows, но не скоро >W<
 **Для Arch:**
