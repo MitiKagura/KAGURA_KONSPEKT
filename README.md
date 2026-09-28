@@ -13,16 +13,16 @@ Markdown-редактором(с добавлением MathJax и mermaid), И�
 ### 💧 Liquid Glass
 
 <div style="overflow-x: auto; white-space: nowrap; padding-bottom: 8px;">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-main.png" alt="Главный экран" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-files.png" alt="Файлы" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-music.png" alt="Музыка" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-notes.png" alt="Заметки" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-diary.png" alt="Дневник" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-teachers.png" alt="Преподаватели" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-test.png" alt="Тесты" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-md2pdf.png" alt="Конвертер MD → PDF" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-voice.png" alt="Голосовой ввод" width="260">
-  <img src="images/Liquid/LiquidGlass/LiquidGlass-settings.png" alt="Настройки" width="260">
+  <img src="images/Liquid/LiquidGlass-main.png" alt="Главный экран" width="260">
+  <img src="images/Liquid/LiquidGlass-files.png" alt="Файлы" width="260">
+  <img src="images/Liquid/LiquidGlass-music.png" alt="Музыка" width="260">
+  <img src="images/Liquid/LiquidGlass-notes.png" alt="Заметки" width="260">
+  <img src="images/Liquid/LiquidGlass-diary.png" alt="Дневник" width="260">
+  <img src="images/Liquid/LiquidGlass-teachers.png" alt="Преподаватели" width="260">
+  <img src="images/Liquid/LiquidGlass-test.png" alt="Тесты" width="260">
+  <img src="images/Liquid/LiquidGlass-md2pdf.png" alt="Конвертер MD → PDF" width="260">
+  <img src="images/Liquid/LiquidGlass-voice.png" alt="Голосовой ввод" width="260">
+  <img src="images/Liquid/LiquidGlass-settings.png" alt="Настройки" width="260">
 </div>
 
 ---
@@ -30,16 +30,16 @@ Markdown-редактором(с добавлением MathJax и mermaid), И�
 ### 🎨 Material You
 
 <div style="overflow-x: auto; white-space: nowrap; padding-bottom: 8px;">
-  <img src="images/MatYou/MaterialYou/MaterialYou-main.png" alt="Главный экран" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-files.png" alt="Файлы" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-music.png" alt="Музыка" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-notes.png" alt="Заметки" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-diary.png" alt="Дневник" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-teachers.png" alt="Преподаватели" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-test.png" alt="Тесты" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-md2pdf.png" alt="Конвертер MD → PDF" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-voice.png" alt="Голосовой ввод" width="260">
-  <img src="images/MatYou/MaterialYou/MaterialYou-settings.png" alt="Настройки" width="260">
+  <img src="images/MatYou/MaterialYou-main.png" alt="Главный экран" width="260">
+  <img src="images/MatYou/MaterialYou-files.png" alt="Файлы" width="260">
+  <img src="images/MatYou/MaterialYou-music.png" alt="Музыка" width="260">
+  <img src="images/MatYou/MaterialYou-notes.png" alt="Заметки" width="260">
+  <img src="images/MatYou/MaterialYou-diary.png" alt="Дневник" width="260">
+  <img src="images/MatYou/MaterialYou-teachers.png" alt="Преподаватели" width="260">
+  <img src="images/MatYou/MaterialYou-test.png" alt="Тесты" width="260">
+  <img src="images/MatYou/MaterialYou-md2pdf.png" alt="Конвертер MD → PDF" width="260">
+  <img src="images/MatYou/MaterialYou-voice.png" alt="Голосовой ввод" width="260">
+  <img src="images/MatYou/MaterialYou-settings.png" alt="Настройки" width="260">
 </div>
 
 ---
@@ -47,16 +47,16 @@ Markdown-редактором(с добавлением MathJax и mermaid), И�
 ### 📱 One UI 9
 
 <div style="overflow-x: auto; white-space: nowrap; padding-bottom: 8px;">
-  <img src="images/OneUI/OneUI9/OneUI9-main.png" alt="Главный экран" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-files.png" alt="Файлы" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-music.png" alt="Музыка" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-notes.png" alt="Заметки" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-diary.png" alt="Дневник" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-teachers.png" alt="Преподаватели" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-test.png" alt="Тесты" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-md2pdf.png" alt="Конвертер MD → PDF" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-voice.png" alt="Голосовой ввод" width="260">
-  <img src="images/OneUI/OneUI9/OneUI9-settings.png" alt="Настройки" width="260">
+  <img src="images/OneUI/OneUI9-main.png" alt="Главный экран" width="260">
+  <img src="images/OneUI/OneUI9-files.png" alt="Файлы" width="260">
+  <img src="images/OneUI/OneUI9-music.png" alt="Музыка" width="260">
+  <img src="images/OneUI/OneUI9-notes.png" alt="Заметки" width="260">
+  <img src="images/OneUI/OneUI9-diary.png" alt="Дневник" width="260">
+  <img src="images/OneUI/OneUI9-teachers.png" alt="Преподаватели" width="260">
+  <img src="images/OneUI/OneUI9-test.png" alt="Тесты" width="260">
+  <img src="images/OneUI/OneUI9-md2pdf.png" alt="Конвертер MD → PDF" width="260">
+  <img src="images/OneUI/OneUI9-voice.png" alt="Голосовой ввод" width="260">
+  <img src="images/OneUI/OneUI9-settings.png" alt="Настройки" width="260">
 </div>
 
 ---
@@ -64,16 +64,16 @@ Markdown-редактором(с добавлением MathJax и mermaid), И�
 ### 🕹️ Steam
 
 <div style="overflow-x: auto; white-space: nowrap; padding-bottom: 8px;">
-  <img src="images/Steam/Steam/Steam-main.png" alt="Главный экран" width="260">
-  <img src="images/Steam/Steam/Steam-files.png" alt="Файлы" width="260">
-  <img src="images/Steam/Steam/Steam-music.png" alt="Музыка" width="260">
-  <img src="images/Steam/Steam/Steam-notes.png" alt="Заметки" width="260">
-  <img src="images/Steam/Steam/Steam-diary.png" alt="Дневник" width="260">
-  <img src="images/Steam/Steam/Steam-teachers.png" alt="Преподаватели" width="260">
-  <img src="images/Steam/Steam/Steam-test.png" alt="Тесты" width="260">
-  <img src="images/Steam/Steam/Steam-md2pdf.png" alt="Конвертер MD → PDF" width="260">
-  <img src="images/Steam/Steam/Steam-voice.png" alt="Голосовой ввод" width="260">
-  <img src="images/Steam/Steam/Steam-settings.png" alt="Настройки" width="260">
+  <img src="images/Steam/Steam-main.png" alt="Главный экран" width="260">
+  <img src="images/Steam/Steam-files.png" alt="Файлы" width="260">
+  <img src="images/Steam/Steam-music.png" alt="Музыка" width="260">
+  <img src="images/Steam/Steam-notes.png" alt="Заметки" width="260">
+  <img src="images/Steam/Steam-diary.png" alt="Дневник" width="260">
+  <img src="images/Steam/Steam-teachers.png" alt="Преподаватели" width="260">
+  <img src="images/Steam/Steam-test.png" alt="Тесты" width="260">
+  <img src="images/Steam/Steam-md2pdf.png" alt="Конвертер MD → PDF" width="260">
+  <img src="images/Steam/Steam-voice.png" alt="Голосовой ввод" width="260">
+  <img src="images/Steam/Steam-settings.png" alt="Настройки" width="260">
 </div>
 
 ## Возможности
