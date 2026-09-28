@@ -1,0 +1,498 @@
+/* ============================================================
+   KAGURA•KONSPEKT — МОБИЛЬНАЯ РАЗМЕТКА
+   ------------------------------------------------------------
+   Единая шкала для всех страниц, подстраниц и папок.
+   Размеры и отступы заданы токенами ниже, поэтому масштаб
+   не «плавает» между разделами и уровнями вложенности.
+
+   Правила применяются двумя путями сразу:
+     html.view-mobile           — режим выбран приложением;
+     @media (max-width: 820px)  — страховка, если класс ещё не проставлен.
+   Из-за второго условия телефон никогда не получает десктопный вид.
+   ============================================================ */
+
+:root {
+  /* Шкала мобильного интерфейса — единственный источник размеров */
+  --m-gap: 12px;
+  --m-pad: 14px;
+  --m-radius: 16px;
+  --m-text: 15px;
+  --m-text-sm: 13px;
+  --m-text-xs: 11.5px;
+  --m-title: 25px;
+  --m-subtitle: 13px;
+  --m-control: 44px;
+  --m-nav-h: 64px;
+  --m-nav-space: calc(var(--m-nav-h) + 56px + env(safe-area-inset-bottom));
+}
+
+/* ============================================================
+   1. ЗАЩИТА ОТ РАСТЯГИВАНИЯ
+   Главная причина «скачущего» масштаба: элемент сетки или flex
+   по умолчанию не может стать уже своего содержимого. Одно длинное
+   имя файла раздвигало страницу шире экрана, и телефон уменьшал
+   всю вёрстку. Ниже это запрещено на уровне каркаса.
+   ============================================================ */
+@media (max-width: 820px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .main-area,
+  .main-area * {
+    min-width: 0;
+  }
+  .card,
+  .panel,
+  .panel-flat {
+    min-width: 0;
+    max-width: 100%;
+  }
+  /* Длинные имена файлов, ссылки и формулы переносятся, а не раздвигают экран */
+  .card,
+  .panel,
+  .panel-flat,
+  .md-body,
+  .page-sub {
+    overflow-wrap: anywhere;
+  }
+  img,
+  video,
+  canvas,
+  iframe,
+  table,
+  pre {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   2. КАРКАС СТРАНИЦЫ — одинаков для всех разделов
+   ============================================================ */
+html.view-mobile .main-area,
+html.view-mobile[data-theme="oneui"] .main-area,
+html.view-mobile[data-theme="steam"] .main-area {
+  margin: 0;
+  max-width: none;
+  padding: var(--m-pad) var(--m-pad) var(--m-nav-space);
+}
+html.view-mobile .side {
+  display: none !important;
+}
+@media (max-width: 820px) {
+  .main-area,
+  [data-theme="oneui"] .main-area,
+  [data-theme="steam"] .main-area {
+    margin: 0;
+    max-width: none;
+    padding: var(--m-pad) var(--m-pad) var(--m-nav-space);
+  }
+  .side {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   3. ТИПОГРАФИКА — единая на всех страницах
+   ============================================================ */
+@media (max-width: 820px) {
+  .page-hero,
+  [data-theme="oneui"] .page-hero {
+    margin-bottom: var(--m-gap);
+    padding: 0 2px;
+  }
+  .page-title {
+    font-size: var(--m-title);
+    line-height: 1.2;
+  }
+  .page-sub {
+    margin-top: 4px;
+    font-size: var(--m-subtitle);
+  }
+  .md-body {
+    font-size: var(--m-text);
+  }
+}
+
+/* ============================================================
+   4. НИЖНЯЯ ПАНЕЛЬ НАВИГАЦИИ (все темы)
+   ============================================================ */
+html.view-mobile .bottomnav,
+body .bottomnav {
+  position: fixed;
+}
+@media (max-width: 820px) {
+  .bottomnav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 2px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 45;
+    min-height: var(--m-nav-h);
+    padding: 7px 5px calc(7px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--bg-soft) 94%, transparent);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(20px);
+  }
+  .bottomnav .nav-item {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    min-width: 0;
+    padding: 7px 2px;
+    border: none;
+    border-radius: 13px;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .bottomnav .nav-label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 420px) {
+  .bottomnav {
+    gap: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .bottomnav .nav-item {
+    padding: 7px 1px;
+  }
+  .bottomnav .nav-label {
+    font-size: 9px;
+    letter-spacing: -0.2px;
+  }
+}
+
+/* Оформление панели под каждую тему */
+@media (max-width: 820px) {
+  [data-theme="material"] .bottomnav,
+  [data-theme="oneui"] .bottomnav {
+    border-radius: 26px 26px 0 0;
+    box-shadow: 0 -10px 32px -18px rgba(0, 0, 0, 0.75);
+  }
+  [data-theme="material"] .bottomnav .nav-item.active,
+  [data-theme="oneui"] .bottomnav .nav-item.active {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  /* Liquid Glass: плотная основа + блик и блюр — стекло, но читаемое */
+  [data-theme="glass"] .bottomnav {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bg-soft) 82%, rgba(255, 255, 255, 0.12)),
+      color-mix(in srgb, var(--bg) 92%, transparent)
+    );
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 22px 22px 0 0;
+    backdrop-filter: blur(26px) saturate(180%);
+    box-shadow:
+      0 -10px 34px -12px rgba(0, 0, 0, 0.85),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  }
+  [data-theme="glass"] .bottomnav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    pointer-events: none;
+  }
+  [data-theme="glass"] .bottomnav .nav-item.active {
+    background: color-mix(in srgb, var(--accent) 22%, rgba(255, 255, 255, 0.08));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  }
+  [data-theme="steam"] .bottomnav {
+    background: var(--bg-soft);
+    border-radius: 0;
+    border-top: 2px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  }
+  [data-theme="steam"] .bottomnav .nav-item.active {
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 var(--accent);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--accent) 20%, transparent),
+      transparent
+    );
+  }
+}
+
+/* Меню «Ещё» */
+@media (max-width: 820px) {
+  .nav-more-sheet {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: calc(100% + 8px);
+    z-index: 46;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: calc(var(--m-radius) + 4px);
+    /* Непрозрачный фон: контент страницы не должен просвечивать */
+    background: var(--bg-soft);
+    box-shadow: 0 -14px 40px -8px rgba(0, 0, 0, 0.9);
+    animation: fadeSlideUp 0.18s ease both;
+  }
+  [data-theme="glass"] .nav-more-sheet {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
+      var(--bg-soft);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 -14px 44px -10px rgba(0, 0, 0, 0.9),
+      inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  }
+  .nav-more-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 14px;
+    border-radius: var(--m-radius);
+    color: var(--text);
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .nav-more-item.active {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+  .nav-more-divider {
+    height: 1px;
+    margin: 6px 4px;
+    background: var(--line);
+  }
+  .nav-more-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 10px 4px;
+  }
+}
+
+/* ============================================================
+   5. ЭЛЕМЕНТЫ УПРАВЛЕНИЯ — одинаковый размер во всех разделах
+   ============================================================ */
+@media (max-width: 820px) {
+  .btn {
+    min-height: var(--m-control);
+    font-size: var(--m-text-sm);
+  }
+  .btn-icon {
+    min-width: var(--m-control);
+  }
+  .input,
+  .select,
+  .textarea {
+    /* 16px не даёт браузеру увеличивать страницу при фокусе */
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+  .chip {
+    font-size: var(--m-text-xs);
+  }
+  .modal,
+  .modal.wide,
+  .modal.xwide {
+    max-width: 100%;
+    max-height: 92dvh;
+    padding: 20px 16px;
+  }
+  .toast-wrap {
+    left: 12px;
+    right: 12px;
+    bottom: calc(var(--m-nav-h) + 40px + env(safe-area-inset-bottom));
+    transform: none;
+  }
+  .toast {
+    width: 100%;
+    text-align: center;
+  }
+  .miniplayer {
+    left: 10px;
+    right: 10px;
+    bottom: calc(var(--m-nav-h) + 20px + env(safe-area-inset-bottom));
+  }
+  .video-exit-fullscreen {
+    min-width: 48px;
+    padding: 0 13px;
+  }
+  .video-exit-fullscreen span {
+    display: none;
+  }
+}
+
+/* ============================================================
+   6. СЕТКИ — на телефоне всё в одну колонку
+   ============================================================ */
+@media (max-width: 820px) {
+  .main-area [class*="grid-cols-"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  /* Исключения: намеренно компактные сетки остаются многоколоночными */
+  .main-area .grid-cols-2.gap-3,
+  .main-area .grid-cols-3,
+  .main-area .quiz-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* ============================================================
+   7. РАЗДЕЛ «ФАЙЛЫ»
+   Основной источник прежнего скачка масштаба.
+   ============================================================ */
+@media (max-width: 820px) {
+  /* Карточка файла никогда не шире экрана, как бы длинно ни звалось имя */
+  .main-area .card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .main-area .card > * {
+    min-width: 0;
+  }
+  /* Крошки: одна строка с прокруткой вместо переноса с висящей стрелкой */
+  .files-crumbs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    justify-content: flex-start;
+  }
+  .files-crumbs::-webkit-scrollbar {
+    display: none;
+  }
+  .files-crumbs > * {
+    flex: 0 0 auto;
+  }
+  .files-crumbs .btn {
+    min-height: 34px;
+    white-space: nowrap;
+  }
+}
+
+/* ============================================================
+   8. РАЗДЕЛ «КОНСПЕКТЫ»
+   ============================================================ */
+@media (max-width: 820px) {
+  .notes-layout {
+    gap: var(--m-gap);
+  }
+  .notes-list-scroll {
+    flex-direction: column;
+    overflow: visible;
+  }
+  .notes-list-scroll > * {
+    width: auto;
+  }
+  .notes-hover-action {
+    opacity: 1;
+  }
+  .notes-touch-btn {
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .notes-hide-on-mobile {
+    display: none !important;
+  }
+  .notes-back-btn {
+    display: inline-flex;
+  }
+  .notes-split-toggle,
+  .notes-split-preview {
+    display: none;
+  }
+  .notes-header-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+  .notes-header-actions .btn,
+  .notes-header-actions a.btn {
+    width: 100%;
+    min-width: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: var(--m-text-sm);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .title-input {
+    font-size: 18px;
+    padding: 13px 16px;
+  }
+  .md-editor-textarea {
+    min-height: 300px !important;
+  }
+  .notes-preview-pane {
+    min-height: 240px !important;
+    padding: 16px !important;
+  }
+  .md-tool {
+    min-width: 38px;
+    height: 38px;
+  }
+}
+
+/* ============================================================
+   9. MARKDOWN, ФОРМУЛЫ, ТАБЛИЦЫ
+   ============================================================ */
+@media (max-width: 820px) {
+  .md-body mjx-container[jax="CHTML"][display="true"] {
+    padding: 12px 8px;
+    overflow-x: auto;
+  }
+  .md-body th,
+  .md-body td {
+    padding: 7px 9px;
+    font-size: 0.92em;
+  }
+}
+
+/* ============================================================
+   10. ВСТРОЕННЫЕ СЕРВИСЫ И ТЕСТЫ
+   ============================================================ */
+@media (max-width: 820px) {
+  .embed-stage {
+    height: min(64vh, 620px);
+    min-height: 320px;
+  }
+  .embed-overlay-bar {
+    gap: 8px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-top));
+  }
+  .quiz-option {
+    padding: 11px 12px;
+    font-size: var(--m-text);
+  }
+  .quiz-marker {
+    width: 26px;
+    height: 26px;
+  }
+}

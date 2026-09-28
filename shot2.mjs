@@ -1,0 +1,15 @@
+import { chromium } from "playwright";
+const B="http://127.0.0.1:3000"; const b=await chromium.launch();
+const p=await b.newPage({viewport:{width:1440,height:1000}});
+await p.goto(B+"/login",{waitUntil:"networkidle"});
+const username = process.env.KAGURA_TEST_USERNAME;
+const password = process.env.KAGURA_TEST_PASSWORD;
+if (!username || !password) throw new Error("Задайте KAGURA_TEST_USERNAME и KAGURA_TEST_PASSWORD для теста.");
+await p.fill('input[placeholder="Имя пользователя"]', username);
+await p.fill('input[placeholder="••••••••"]', password);
+await p.click('button[type="submit"]'); await p.waitForURL("**/home");
+await p.goto(B+"/notes",{waitUntil:"networkidle"}); await p.waitForTimeout(900);
+await p.locator("text=Возможности").first().click(); await p.waitForTimeout(5000);
+await p.locator('button[title="Только просмотр"]').click(); await p.waitForTimeout(4000);
+await p.locator(".notes-preview-pane").first().screenshot({path:"shots/preview.png"});
+await b.close();
