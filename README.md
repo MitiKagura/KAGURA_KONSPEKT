@@ -108,15 +108,15 @@ Markdown-редактором(с добавлением MathJax и mermaid), И�
 git clone https://github.com/MitiKagura/KAGURA_KONSPEKT.git
 cd KAGURA_KONSPEKT
 ```
-Пока есть только 2 версии установщика: для **Arch-based систем** и для **Ubuntu**. В будущем создам версию для Windows, но не скоро >W<
-**Для Arch:**
+Пока есть только 2 версии установщика: для **Arch-based систем** и для **Ubuntu**. В будущем создам версию для Windows, но не скоро.
+**Для `Arch`:**
 ```bash
 sudo pacman -S paru
 chmod +x ARCH.sh
 bash ARCH.sh
 # Так надёжнее для тех, кто может использовать кастомные терминальные оболочки. Главное чтобы был paru
 ```
-**Для Ubuntu:**
+**Для `Ubuntu`:**
 ```bash
 chmod +x UBUNTU.sh
 bash UBUNTU.sh
@@ -124,7 +124,7 @@ bash UBUNTU.sh
 Скрипт поставит зависимости, развернёт проект в `/opt/KAGURA_KONSPEKT`, создаст
 **полностью отдельный экземпляр PostgreSQL** — собственный кластер с файлами в
 `/var/lib/kagura_db` на порту **55432** (сервис `kagura-db.service`), хранилище
-`/srv/KAGURA_KONSPEKT`, systemd-сервисы и загрузит модель `qwen3:8b.
+`/srv/KAGURA_KONSPEKT`, systemd-сервисы и загрузит модель `qwen3:8b`.
 Модель можно менять в `install.sh`, `.env.example` и в `src/lib/ollama.ts`(строка 9).
 
 Ваш основной PostgreSQL (`/var/lib/postgres/data`, порт 5432) и его systemd-сервис
